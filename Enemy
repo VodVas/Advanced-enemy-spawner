@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    [SerializeField, Range(1, 10)] private float _speed;
+
+    private Vector3 _endPointPosition;
+
+    public void TakeDirection(Vector3 endPointPosition)
+    {
+        _endPointPosition = endPointPosition;
+    }
+
+    private void Update()
+    {
+        Move();
+    }
+
+    private void Move()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, _endPointPosition, _speed * Time.deltaTime);
+    }
+}
