@@ -7,7 +7,7 @@ public class ObjectMovement : MonoBehaviour
 
     [SerializeField, Range(1,20)] private float _speed = 1.0f;
 
-    void Update()
+    private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _endPoint.position, _speed * Time.deltaTime);
 
