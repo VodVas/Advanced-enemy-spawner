@@ -6,11 +6,6 @@ public class Enemy : MonoBehaviour
 
     private Vector3 _endPointPosition;
 
-    public void TakeDirection(Vector3 endPointPosition)
-    {
-        _endPointPosition = endPointPosition;
-    }
-
     private void Update()
     {
         Move();
@@ -19,5 +14,10 @@ public class Enemy : MonoBehaviour
     private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, _endPointPosition, _speed * Time.deltaTime);
+    }
+
+    public void SetDirection(Vector3 endPointPosition)
+    {
+        _endPointPosition = endPointPosition;
     }
 }
