@@ -4,7 +4,7 @@ using UnityEngine;
 public class SinglePointSpawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private GameObject _target;
+    [SerializeField] private Transform _target;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class SinglePointSpawner : MonoBehaviour
         {
             Enemy enemy = Instantiate(_enemy, transform.position, Quaternion.identity);
 
-            enemy.TakeDirection(_target.transform.position);
+            enemy.SetDirection(_target.transform);
 
             yield return wait;
         }
