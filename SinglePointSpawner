@@ -19,7 +19,7 @@ public class SinglePointSpawner : MonoBehaviour
         {
             Enemy enemy = Instantiate(_enemy, transform.position, Quaternion.identity);
 
-            enemy.SetDirection(_target.transform);
+            enemy.SetDirection(_target);
 
             yield return wait;
         }
